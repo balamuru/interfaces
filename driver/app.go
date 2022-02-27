@@ -63,8 +63,9 @@ func main() {
 
 	//try this with a duck
 	var animal3 BoringAnimal = Duck("donald")
-	var duck Duck = animal3.(Duck)
+	duck, ok := animal3.(Duck)
 	println(duck)
+	println(ok)
 	println(animal3.Move())
 	println(animal3.Eat())
 }
