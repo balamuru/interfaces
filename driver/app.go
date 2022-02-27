@@ -1,6 +1,8 @@
 package main
 
 import (
+	"strings"
+
 	"github.com/balamuru/interfaces/animal"
 )
 
@@ -23,7 +25,7 @@ func (h Horse) Eat() string {
 }
 
 func (h Horse) Dance() string {
-	return h.walkBehavior+"-"+h.walkBehavior
+	return strings.ToUpper(h.walkBehavior+"-"+h.walkBehavior)
 }
 
 func main() {
