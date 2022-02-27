@@ -45,6 +45,10 @@ func (h Horse) Dance() string {
 
 func main() {
 
+	defer println("bye 2") 	//LIFO defers
+	defer println("bye 1")	//LIFO defers
+	defer fmt.Println("")
+
 	//define instance of a struct and exercise functions on it
 	horsie := Horse{walkBehavior: "clip-clop", eatBehavior: "chomp-chomp"}
 	println(horsie.walkBehavior)
