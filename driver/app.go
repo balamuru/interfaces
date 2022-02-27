@@ -48,4 +48,5 @@ func main() {
 	var animal2 Animal2 = horsie
 	println(animal2.Move())
 	println(animal2.Eat())
+	// animal2.Dance() - not valid as Animal2 does not implement Dance()
 }
