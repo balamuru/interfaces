@@ -6,9 +6,19 @@ import (
 	"github.com/balamuru/interfaces/animal"
 )
 
-type Animal2 interface {
+type BoringAnimal interface {
 	Move() string
 	Eat() string
+}
+
+type Duck string
+
+func (d Duck) Move() string {
+	return "waddle"
+}
+
+func (d Duck) Eat() string {
+	return "peck"
 }
 
 type Horse struct {
@@ -45,8 +55,16 @@ func main() {
 
 
 	//impl interface defined in current pkg
-	var animal2 Animal2 = horsie
+	var animal2 BoringAnimal = horsie
 	println(animal2.Move())
 	println(animal2.Eat())
 	// animal2.Dance() - not valid as Animal2 does not implement Dance()
+	println()
+
+	//try this with a duck
+	var duck Duck 
+	var animal3 BoringAnimal = duck
+
+	println(animal3.Move())
+	println(animal3.Eat())
 }
