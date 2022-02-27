@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"strings"
 
 	"github.com/balamuru/interfaces/animal"
@@ -34,6 +35,10 @@ func (h Horse) Eat() string {
 	return h.eatBehavior
 }
 
+func (h Horse) String() string {
+	return h.walkBehavior+" "+h.eatBehavior
+}
+
 func (h Horse) Dance() string {
 	return strings.ToUpper(h.walkBehavior+"-"+h.walkBehavior)
 }
@@ -53,6 +58,10 @@ func main() {
 	println(animal.Dance())
 	println()
 
+	//try and satisy the inbuild Stringer interface
+	var stringer fmt.Stringer = horsie
+	println(stringer.String())
+	println()
 
 	//impl interface defined in current pkg
 	var animal2 BoringAnimal = horsie
