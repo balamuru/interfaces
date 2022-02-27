@@ -28,17 +28,18 @@ func (h Horse) Eat() string{
 
 func main() {
 
-	fmt.Println("Hello World")
+	//define instance of a struct and exercise functions on it
 	horsie := Horse{walkBehavior: "clip-clop", eatBehavior: "chomp-chomp"}
 	println(horsie.walkBehavior)
 	println(horsie.eatBehavior)
 
-	//impl interface from aother
+	//impl interface from aother package
 	var animal animal.Animal = horsie 
 	println(animal.Move())
 	println(animal.Eat())
 
 
+	//impl interface defined in current pkg
 	var animal2 Animal2 = horsie 
 	println(animal2.Move())
 	println(animal2.Eat())
