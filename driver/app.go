@@ -22,17 +22,25 @@ func (h Horse) Eat() string {
 	return h.eatBehavior
 }
 
+func (h Horse) Dance() string {
+	return h.walkBehavior+"-"+h.walkBehavior
+}
+
 func main() {
 
 	//define instance of a struct and exercise functions on it
 	horsie := Horse{walkBehavior: "clip-clop", eatBehavior: "chomp-chomp"}
 	println(horsie.walkBehavior)
 	println(horsie.eatBehavior)
+	println()
 
 	//impl interface from aother package
 	var animal animal.Animal = horsie
 	println(animal.Move())
 	println(animal.Eat())
+	println(animal.Dance())
+	println()
+
 
 	//impl interface defined in current pkg
 	var animal2 Animal2 = horsie
